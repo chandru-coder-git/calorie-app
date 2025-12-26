@@ -1,0 +1,103 @@
+/* frontend/src/styles.css */
+
+/* Custom card colors */
+.card {
+    border-radius: 10px;
+}
+
+/* Add spacing to list items */
+.list-group-item {
+    font-size: 1.1rem;
+}
+
+/* Navbar brand style */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* Buttons hover */
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Table font */
+.table th, .table td {
+    vertical-align: middle;
+}
+
+
+
+.active-link {
+  font-weight: bold;
+  color: #ffdd57;
+}
+
+
+/* Base styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #010911;
+  padding: 10px 20px;
+  color: white;
+  position: relative;
+  z-index: 1000;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+  color: #ffdd57;
+}
+
+.active-link {
+  font-weight: bold;
+  color: #ffdd57;
+}
+
+/* Hamburger toggle */
+.navbar-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #01080f;
+    text-align: center;
+    transition: max-height 0.3s ease-in-out;
+    overflow: hidden;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .navbar-links a {
+    margin: 15px 0;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+}
