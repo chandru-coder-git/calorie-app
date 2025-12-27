@@ -1,12 +1,12 @@
 const API_URL = import.meta.env.VITE_API_URL;
 
 export const fetchUser = async () => {
-  const res = await fetch(`${API_URL}/user`);
+  const res = await fetch(`${API_URL}/api/user`);
   return res.json();
 };
 
 export const updateUser = async (data) => {
-  const res = await fetch(`${API_URL}/user`, {
+  const res = await fetch(`${API_URL}/api/user`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
@@ -16,7 +16,7 @@ export const updateUser = async (data) => {
 
 export const fetchFoods = async () => {
   try{
-      const res = await fetch(`${API_URL}/foods`);
+      const res = await fetch(`${API_URL}/api/foods`);
       return res.json();
   }catch(err){
     console.error('Error fetch data')
@@ -26,7 +26,7 @@ export const fetchFoods = async () => {
 
 export const addFood = async (data) => {
 
-  const res = await fetch(`${API_URL}/foods`, {
+  const res = await fetch(`${API_URL}/api/foods`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
@@ -36,7 +36,7 @@ export const addFood = async (data) => {
 
 export const fetchFoodById = async (id) => {
   try{
-      const res = await fetch(`${API_URL}/foods/${id}`, { method: "GET" });
+      const res = await fetch(`${API_URL}/api/foods/${id}`, { method: "GET" });
       return await res.json();
   }catch(err){
     console.error('Error fetch data')
@@ -44,7 +44,7 @@ export const fetchFoodById = async (id) => {
 };
 
 export const updateFood = async (id, data) => {
-  const res = await fetch(`${API_URL}/foods/${id}`, {
+  const res = await fetch(`${API_URL}/api/foods/${id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
@@ -53,17 +53,17 @@ export const updateFood = async (id, data) => {
 };
 
 export const deleteFood = async (id) => {
-  const res = await fetch(`${API_URL}/foods/${id}`, { method: "DELETE" });
+  const res = await fetch(`${API_URL}/api/foods/${id}`, { method: "DELETE" });
   return res.json();
 };
 
 export const fetchConsume = async () => {
-  const res = await fetch(`${API_URL}/consume`);
+  const res = await fetch(`${API_URL}/api/consume`);
   return res.json();
 };
 
 export const addConsume = async (data) => {
-  const res = await fetch(`${API_URL}/consume`, {
+  const res = await fetch(`${API_URL}/api/consume`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
@@ -72,7 +72,7 @@ export const addConsume = async (data) => {
 };
 
 export const updateConsume = async (id, data) => {
-  const res = await fetch(`${API_URL}/consume/${id}`, {
+  const res = await fetch(`${API_URL}/api/consume/${id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
@@ -81,6 +81,6 @@ export const updateConsume = async (id, data) => {
 };
 
 export const deleteConsume = async (id) => {
-  const res = await fetch(`${API_URL}/consume/${id}`, { method: "DELETE" });
+  const res = await fetch(`${API_URL}/api/consume/${id}`, { method: "DELETE" });
   return res.json();
 };
